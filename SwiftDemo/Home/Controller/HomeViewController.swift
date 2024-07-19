@@ -130,6 +130,11 @@ class HomeViewController: BaseViewController {
             guard let `self` = self else { return }
             self.scrollView.refreshControl?.endRefreshing()
         }
+        
+        output.errorResponse.subscribe { [weak self] message in
+            guard let `self` = self else { return }
+            self.showAlert(message: message)
+        }
     }
     
     private func toNotificationPage(_ data: [NotificationMessageModel]) {
