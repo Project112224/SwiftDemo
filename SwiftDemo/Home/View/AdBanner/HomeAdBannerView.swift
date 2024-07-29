@@ -13,6 +13,20 @@ class HomeAdBannerView: UIView {
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var controlHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var adMaskView: UIView!
+    @IBOutlet weak var adMaskRightView: UIView!
+    
+    var isShowBanner: Bool = false {
+        didSet {
+            self.collectionView.isHidden = !self.isShowBanner
+            self.pageControl.isHidden = !self.isShowBanner
+            self.controlHeightConstraint.constant = self.isShowBanner ? 20 : 0
+            self.adMaskView.isHidden = self.isShowBanner
+            self.adMaskRightView.isHidden = self.isShowBanner
+        }
+    }
+    
     
     var nextTimer: Timer?
     
@@ -75,6 +89,7 @@ class HomeAdBannerView: UIView {
             UINib(nibName: HomeAdBannerImageCollectionViewCell.nibName, bundle: nil),
             forCellWithReuseIdentifier: HomeAdBannerImageCollectionViewCell.nibName
         )
+        self.isShowBanner = false
     }
     
     func bindBanner(model: [HomeAdBannerInfoModel]) {
@@ -85,8 +100,10 @@ class HomeAdBannerView: UIView {
         self.collectionView.reloadData()
         
         guard self.bannerList.count > 1 else {
+            self.isShowBanner = false
             return
         }
+        self.isShowBanner = true
         self.currentIndex = 0
         self.collectionView.scrollToItem(
             at: IndexPath(item: self.currentIndex, section: 0),

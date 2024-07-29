@@ -58,7 +58,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="1GZ-34-Dea"/>
                                 <constraint firstItem="pBu-Q3-2ul" firstAttribute="leading" secondItem="4FW-gp-uMt" secondAttribute="trailing" id="1x5-mV-VaC"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pBu-Q3-2ul" secondAttribute="trailing" constant="139" id="27l-tK-G8h"/>
+                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="pBu-Q3-2ul" secondAttribute="trailing" constant="139" id="27l-tK-G8h"/>
                                 <constraint firstItem="4me-q3-0AY" firstAttribute="centerY" secondItem="jK8-Va-2Hs" secondAttribute="centerY" id="2cO-2D-peT"/>
                                 <constraint firstAttribute="bottom" secondItem="4FW-gp-uMt" secondAttribute="bottom" id="67E-xV-gNu"/>
                                 <constraint firstItem="4FW-gp-uMt" firstAttribute="top" secondItem="jK8-Va-2Hs" secondAttribute="top" id="9rm-Eq-fpc"/>

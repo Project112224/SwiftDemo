@@ -206,6 +206,10 @@ extension HomeViewModel {
     }
     
     private func fetchAdBanner(onNext: ([HomeAdBannerInfoModel])->(), onError: @escaping (String)->()) async {
+        if (self.isFirstLoad) {
+            onNext([])
+            return
+        }
         await BannerService.queryList { list in
             onNext(list)
         } onError: { error in

@@ -11,17 +11,17 @@ extension HomeViewController {
     
     func layoutSetting() {
         self.view.addSubview(self.scrollView)
-        var scrollViewTopAnchor = self.scrollView.topAnchor.constraint(
+        let scrollViewTopAnchor = self.scrollView.topAnchor.constraint(
             equalTo: self.view.topAnchor, 
             constant: self.view.safeAreaInsets.top
         )
         scrollViewTopAnchor.priority = .defaultLow
         
-        var scrollViewBottomAnchor = self.scrollView.bottomAnchor.constraint(
+        let scrollViewBottomAnchor = self.scrollView.bottomAnchor.constraint(
             equalTo: self.view.bottomAnchor,
-            constant: self.view.safeAreaInsets.bottom
+            constant: self.view.safeAreaInsets.bottom - 72
         )
-        scrollViewBottomAnchor.priority = .defaultLow
+        scrollViewBottomAnchor.priority = .defaultHigh
         
         NSLayoutConstraint.activate([
             scrollViewTopAnchor,
@@ -72,7 +72,7 @@ extension HomeViewController {
         
         self.baseView.addSubview(self.adBannerView)
         NSLayoutConstraint.activate([
-            self.adBannerView.topAnchor.constraint(equalTo: self.favoriteView.bottomAnchor, constant: 8),
+            self.adBannerView.topAnchor.constraint(equalTo: self.favoriteView.bottomAnchor, constant: 16),
             self.adBannerView.leadingAnchor.constraint(equalTo: self.baseView.leadingAnchor, constant: 0),
             self.adBannerView.trailingAnchor.constraint(equalTo: self.baseView.trailingAnchor, constant: 0),
             self.adBannerView.bottomAnchor.constraint(equalTo: self.baseView.bottomAnchor, constant: 0)

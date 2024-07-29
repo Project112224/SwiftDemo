@@ -8,27 +8,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeAdBannerView" customModule="iOSInterviewV1" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeAdBannerView" customModule="SwiftDemo" customModuleProvider="target">
             <connections>
+                <outlet property="adMaskRightView" destination="FFH-PI-bW4" id="n2t-ab-Eg5"/>
+                <outlet property="adMaskView" destination="HUw-Om-39B" id="QiF-P9-BOr"/>
                 <outlet property="baseView" destination="AHl-c2-SyO" id="6hT-SU-g9f"/>
                 <outlet property="collectionView" destination="Jjv-QG-0MZ" id="C1X-Tl-z9X"/>
                 <outlet property="contentView" destination="b9K-Ln-5nZ" id="GG2-iv-bN0"/>
+                <outlet property="controlHeightConstraint" destination="X0H-ca-XhL" id="bgn-1j-MB6"/>
                 <outlet property="pageControl" destination="85K-wi-nNy" id="Dta-v8-HC2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="b9K-Ln-5nZ">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHl-c2-SyO">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jjv-QG-0MZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="Jjv-QG-0MZ" secondAttribute="height" multiplier="375:88" id="AY8-5A-GME"/>
+                                <constraint firstAttribute="height" constant="87.900000000000006" id="Mwa-lp-wDC"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YLk-KB-CYa">
                                 <size key="itemSize" width="128" height="128"/>
@@ -38,23 +41,76 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="85K-wi-nNy">
-                            <rect key="frame" x="0.0" y="96" width="375" height="20"/>
+                            <rect key="frame" x="0.0" y="92" width="375" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="X0H-ca-XhL"/>
                             </constraints>
                             <color key="pageIndicatorTintColor" white="0.0" alpha="0.30411837748344372" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </pageControl>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUw-Om-39B">
+                            <rect key="frame" x="24" y="0.0" width="327" height="88"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peE-OW-2pf">
+                                    <rect key="frame" x="139.66666666666666" y="32" width="48" height="24"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sr-hh-IbA">
+                                            <rect key="frame" x="12.333333333333343" y="1.6666666666666643" width="23" height="20.333333333333332"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="0sr-hh-IbA" firstAttribute="centerX" secondItem="peE-OW-2pf" secondAttribute="centerX" id="6xc-IQ-aOc"/>
+                                        <constraint firstItem="0sr-hh-IbA" firstAttribute="centerY" secondItem="peE-OW-2pf" secondAttribute="centerY" id="BJ4-E1-Lg7"/>
+                                        <constraint firstAttribute="height" constant="24" id="hfB-jb-i0K"/>
+                                        <constraint firstAttribute="width" constant="48" id="oKy-aQ-C0v"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="peE-OW-2pf" firstAttribute="centerY" secondItem="HUw-Om-39B" secondAttribute="centerY" id="4Sb-Gz-mg4"/>
+                                <constraint firstItem="peE-OW-2pf" firstAttribute="centerX" secondItem="HUw-Om-39B" secondAttribute="centerX" id="MB9-GY-3Mt"/>
+                                <constraint firstAttribute="height" constant="87.900000000000006" id="tY3-Iv-kUB"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFH-PI-bW4">
+                            <rect key="frame" x="351" y="0.0" width="24" height="92"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="FFH-PI-bW4" firstAttribute="leading" secondItem="HUw-Om-39B" secondAttribute="trailing" id="A3p-sS-iZE"/>
+                        <constraint firstAttribute="trailing" secondItem="FFH-PI-bW4" secondAttribute="trailing" id="GG8-41-kOF"/>
                         <constraint firstAttribute="trailing" secondItem="85K-wi-nNy" secondAttribute="trailing" id="Mis-Tr-c2i"/>
-                        <constraint firstAttribute="bottom" secondItem="85K-wi-nNy" secondAttribute="bottom" id="RXa-yy-jjr"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="85K-wi-nNy" secondAttribute="bottom" id="RXa-yy-jjr"/>
+                        <constraint firstItem="85K-wi-nNy" firstAttribute="top" secondItem="FFH-PI-bW4" secondAttribute="bottom" id="Sj6-hC-xvx"/>
                         <constraint firstItem="Jjv-QG-0MZ" firstAttribute="top" secondItem="AHl-c2-SyO" secondAttribute="top" id="WCc-Xu-4UC"/>
                         <constraint firstItem="Jjv-QG-0MZ" firstAttribute="leading" secondItem="AHl-c2-SyO" secondAttribute="leading" id="YsV-8h-ptV"/>
                         <constraint firstItem="85K-wi-nNy" firstAttribute="top" secondItem="Jjv-QG-0MZ" secondAttribute="bottom" constant="4" id="a1b-hl-MdU"/>
                         <constraint firstItem="85K-wi-nNy" firstAttribute="leading" secondItem="AHl-c2-SyO" secondAttribute="leading" id="ahh-h4-RJ3"/>
+                        <constraint firstItem="FFH-PI-bW4" firstAttribute="top" secondItem="AHl-c2-SyO" secondAttribute="top" id="mRR-5P-Vw9"/>
+                        <constraint firstItem="HUw-Om-39B" firstAttribute="top" secondItem="AHl-c2-SyO" secondAttribute="top" id="nXT-Sr-v1k"/>
+                        <constraint firstItem="HUw-Om-39B" firstAttribute="leading" secondItem="AHl-c2-SyO" secondAttribute="leading" multiplier="24:375" constant="24" id="oFC-qc-V6J"/>
                         <constraint firstAttribute="trailing" secondItem="Jjv-QG-0MZ" secondAttribute="trailing" id="qaN-Ib-ClP"/>
+                        <constraint firstItem="FFH-PI-bW4" firstAttribute="width" secondItem="AHl-c2-SyO" secondAttribute="width" multiplier="24:375" id="y4F-Kq-wzg"/>
                     </constraints>
                 </view>
             </subviews>
@@ -72,7 +128,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-733" y="84"/>
+            <point key="canvasLocation" x="-733.07692307692309" y="86.018957345971558"/>
         </view>
     </objects>
 </document>

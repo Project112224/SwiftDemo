@@ -9,13 +9,18 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    private let tabBarEdge: UIEdgeInsets = UIEdgeInsets(top: 0, left: 24, bottom: 22, right: 24)
+    private let tabBarEdge: UIEdgeInsets = UIEdgeInsets(
+        top: 0,
+        left: UIScreen.main.bounds.size.width * 0.064,
+        bottom: 22,
+        right: UIScreen.main.bounds.size.width * 0.064
+    )
     private let tabBarHeight: CGFloat = 50
     private var tabBarWidth: CGFloat {
         UIScreen.main.bounds.size.width - self.tabBarEdge.left - self.tabBarEdge.right
     }
 
-    private let itemWidth: CGFloat = 70
+    private var itemWidth: CGFloat = 70
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -24,13 +29,18 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
+        self.configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupTabBarFrame()
     }
 }
 
 extension MainTabBarController {
     
-    private func setupUI() {
+    private func configureUI() {
         self.setupViewController()
         self.setupTabBarBackgroundView()
         self.setupTabBarConfig()
@@ -61,6 +71,7 @@ extension MainTabBarController {
     }
     
     private func setupTabBarConfig() {
+        self.itemWidth = (self.tabBarWidth - self.tabBarHeight) / 4
         let tabBarItemCount = CGFloat(self.tabBar.items?.count ?? 0)
         let availableSpace = self.tabBarWidth - (tabBarItemCount * self.itemWidth)
         let itemSpacing = tabBarItemCount == 0 ? 0 : availableSpace / tabBarItemCount
