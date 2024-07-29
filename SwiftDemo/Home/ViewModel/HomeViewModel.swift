@@ -10,11 +10,9 @@ import Combine
 
 class HomeViewModel {
     
-    // .usdSavings1, .usdFixed1, .usdDigital1, .khrSavings1, .khrFixed1, .khrDigital1]
-    private let firstOpenAmountApiList: [Endpoint] = [.usdSavings1, .khrSavings1]
+    private let firstOpenAmountApiList: [Endpoint] = [.usdSavings1, .usdFixed1, .usdDigital1, .khrSavings1, .khrFixed1, .khrDigital1]
     
-    // .usdSavings2, .usdFixed2, .usdFixed2, .usdDigital2, .khrSavings2, .khrFixed2, .khrDigital2]
-    private let pullRefreshAmountApiList: [Endpoint] = [.usdSavings2, .khrSavings2]
+    private let pullRefreshAmountApiList: [Endpoint] = [.usdSavings2, .usdFixed2, .usdFixed2, .usdDigital2, .khrSavings2, .khrFixed2, .khrDigital2]
 
     private var isFirstLoad: Bool = true
     
