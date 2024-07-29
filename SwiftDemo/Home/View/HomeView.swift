@@ -11,7 +11,6 @@ extension HomeViewController {
     
     func layoutSetting() {
         self.view.addSubview(self.scrollView)
-        
         NSLayoutConstraint.activate([
             self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
             self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),

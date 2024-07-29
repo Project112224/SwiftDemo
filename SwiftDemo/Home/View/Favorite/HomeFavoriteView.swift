@@ -69,6 +69,7 @@ extension HomeFavoriteView {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension HomeFavoriteView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.favoriteList.count
@@ -86,6 +87,7 @@ extension HomeFavoriteView: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeFavoriteView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 80)

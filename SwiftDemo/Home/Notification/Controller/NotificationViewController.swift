@@ -39,7 +39,9 @@ class NotificationViewController: BaseViewController {
         self.bindUI()
         self.loadAPIData()
     }
-    
+}
+
+extension NotificationViewController {
     private func bindUI() {
         self.tableView.reloadData()
     }

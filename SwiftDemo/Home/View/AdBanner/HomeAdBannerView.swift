@@ -57,6 +57,7 @@ class HomeAdBannerView: UIView {
     }
 }
 
+// MARK: - Custom Function
 extension HomeAdBannerView {
     private func configureUI() {
         self.contentView = self.loadNib()
@@ -133,7 +134,10 @@ extension HomeAdBannerView {
         self.bannerList.append(firstBanner)
         self.bannerList.insert(lastBanner, at: 0)
     }
-    
+}
+
+// MARK: - Action
+extension HomeAdBannerView {
     @objc private func changeNextBanner() {
         self.currentIndex += 1
         if self.bannerList.count - 1 == self.currentIndex {
@@ -173,7 +177,7 @@ extension HomeAdBannerView: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UIScrollViewDelegate
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeAdBannerView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 80 * (UIScreen.main.bounds.width / 375))
@@ -189,7 +193,7 @@ extension HomeAdBannerView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - HomeAdBannerTableViewCell
+// MARK: - UIScrollViewDelegate
 extension HomeAdBannerView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let collectionViewRect = CGRect(origin: scrollView.contentOffset, size: scrollView.bounds.size)
