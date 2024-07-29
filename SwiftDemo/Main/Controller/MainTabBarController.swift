@@ -57,7 +57,7 @@ extension MainTabBarController {
         }
     }
     
-    /// 設定 TabBar 外圍圓形邊框
+    /// tabbar layout
     private func setupTabBarBackgroundView() {
         let backgroundView = UIView(frame: CGRect(x: self.tabBarEdge.left, y: 0, width: self.tabBarWidth, height: self.tabBarHeight))
         backgroundView.backgroundColor = .white
@@ -71,6 +71,7 @@ extension MainTabBarController {
     }
     
     private func setupTabBarConfig() {
+        // bar width - tabbar radius / item count
         self.itemWidth = (self.tabBarWidth - self.tabBarHeight) / 4
         let tabBarItemCount = CGFloat(self.tabBar.items?.count ?? 0)
         let availableSpace = self.tabBarWidth - (tabBarItemCount * self.itemWidth)
@@ -119,7 +120,7 @@ extension MainTabBarController {
         }
     }
     
-    /// 設定 TabBar Frame 的大小與位置
+    /// setup tabbar frame size and position
     private func setupTabBarFrame() {
         let safeAreaBottomHeight: CGFloat = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.bottom ?? 0
         let spacing: CGFloat = safeAreaBottomHeight == 0 ? self.tabBarEdge.bottom : 0

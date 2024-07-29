@@ -19,6 +19,7 @@ extension HomeViewController {
         
         let scrollViewBottomAnchor = self.scrollView.bottomAnchor.constraint(
             equalTo: self.view.bottomAnchor,
+            // tabbar bottom + height = 72
             constant: self.view.safeAreaInsets.bottom - 72
         )
         scrollViewBottomAnchor.priority = .defaultHigh
