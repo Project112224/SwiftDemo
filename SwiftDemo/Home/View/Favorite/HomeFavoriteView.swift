@@ -30,7 +30,9 @@ class HomeFavoriteView: UIView {
         super.init(coder: aDecoder)!
         configureUI()
     }
-    
+}
+
+extension HomeFavoriteView {
     private func configureUI() {
         self.contentView = self.loadNib()
         self.layoutUI()

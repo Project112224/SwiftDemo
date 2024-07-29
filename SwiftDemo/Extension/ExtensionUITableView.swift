@@ -13,7 +13,7 @@ extension UITableView {
     ///   - identifier: identifier
     ///   - indexPath: indexPath
     /// - Returns: UITableViewCell
-    private func autoAdd_dequeueReusableCellWithIdentifier(identifier: String, forIndexPath indexPath: IndexPath) -> UITableViewCell {
+    private func loadFromClass(_ identifier: String, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         if objc_getAssociatedObject(self, NSString(string: identifier).utf8String!) == nil && self.dequeueReusableCell(withIdentifier: identifier) == nil {
             
             self.register(NSClassFromString(identifier), forCellReuseIdentifier: identifier)
@@ -30,7 +30,7 @@ extension UITableView {
     ///   - identifier: identifier
     ///   - indexPath: indexPath
     /// - Returns: UITableViewCell
-    private func autoAddNib_dequeueReusableCellWithIdentifier(identifier: String, forIndexPath indexPath: IndexPath) -> UITableViewCell {
+    private func loadFromNib(_ identifier: String, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         if objc_getAssociatedObject(self, NSString(string: identifier).utf8String!) == nil && self.dequeueReusableCell(withIdentifier: identifier) == nil {
             let nib = UINib(nibName: identifier, bundle: nil)
             self.register(nib, forCellReuseIdentifier: identifier)
@@ -42,13 +42,13 @@ extension UITableView {
         return self.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
     }
     
-    public func cellAutoIdentifier(_ cellClass: AnyClass, indexPath: IndexPath) -> UITableViewCell {
+    public func cellLoadWithIdentifier(_ cellClass: AnyClass, indexPath: IndexPath) -> UITableViewCell {
         let identifier = String(describing: cellClass)
         if identifier == String(describing: UITableViewCell.self) {
-            return self.autoAdd_dequeueReusableCellWithIdentifier(identifier: identifier, forIndexPath: indexPath)
+            return self.loadFromClass(identifier, forIndexPath: indexPath)
         }
         else {
-            return self.autoAddNib_dequeueReusableCellWithIdentifier(identifier: identifier, forIndexPath: indexPath)
+            return self.loadFromNib(identifier, forIndexPath: indexPath)
         }
     }
 }

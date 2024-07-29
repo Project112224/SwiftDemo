@@ -37,7 +37,9 @@ class HomeAccountBalanceView: UIView {
         super.init(coder: aDecoder)!
         configureUI()
     }
-    
+}
+
+extension HomeAccountBalanceView {
     private func configureUI() {
         self.contentView = self.loadNib()
         self.layoutUI()
@@ -72,9 +74,6 @@ class HomeAccountBalanceView: UIView {
         
         self.eyeButton.isSelected = UserDefaults.isMaskBalance
     }
-}
-
-extension HomeAccountBalanceView {
     
     func bindBalance(_ model: HomeAccountBindModel?) {
         if (model == nil) && self.isLoading {
@@ -100,5 +99,4 @@ extension HomeAccountBalanceView {
         self.usdBalanceLabel.hideSkeletonAnimation()
         self.khrBalanceLabel.hideSkeletonAnimation()
     }
-    
 }

@@ -21,10 +21,8 @@ class HomeFunctionItemCollectionViewCell: UICollectionViewCell {
 }
 
 extension HomeFunctionItemCollectionViewCell {
-    
     func configureCell(type: FunctionType) {
         self.functionImageView.image = UIImage(named: type.imageName)
         self.titleLabel.text = type.rawValue
     }
-    
 }

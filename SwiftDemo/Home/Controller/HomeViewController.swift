@@ -133,7 +133,7 @@ class HomeViewController: BaseViewController {
         
         output.errorResponse.subscribe { [weak self] message in
             guard let `self` = self else { return }
-            self.showAlert(message: message)
+            self.alert(message)
         }
     }
     

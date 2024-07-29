@@ -17,7 +17,7 @@ enum HttpError: Error {
 }
 
 class NetworkManager {
-    static func getMethod<T: Decodable>(endpoint: Endpoint, httpMethod: HttpMethodType = .get, model: T.Type) async -> Result<BaseResponseModel<T>, Error> {
+    static func get<T: Decodable>(endpoint: Endpoint, httpMethod: HttpMethodType = .get, model: T.Type) async -> Result<BaseResponseModel<T>, Error> {
         guard let url = URL(string: endpoint.urlString) else {
             return .failure(HttpError.urlError)
         }

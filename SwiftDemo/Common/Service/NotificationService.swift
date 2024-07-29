@@ -11,7 +11,7 @@ class NotificationService {
     
     /// Empty Notification List
     static func emptyList(onNext: ([NotificationMessageModel]?)->(), onError: ((Error)->())? = nil) async {
-        let result = await NetworkManager.getMethod(endpoint: .emptyNotificationList, model: NotificationModel.self)
+        let result = await NetworkManager.get(endpoint: .emptyNotificationList, model: NotificationModel.self)
         switch result {
         case .success(_):
             onNext(nil)
@@ -22,7 +22,7 @@ class NotificationService {
     
     /// Not Empty Notification List
     static func queryList(onNext: ([NotificationMessageModel]?)->(), onError: ((Error)->())? = nil) async {
-        let result = await NetworkManager.getMethod(endpoint: .notificationList, model: NotificationModel.self)
+        let result = await NetworkManager.get(endpoint: .notificationList, model: NotificationModel.self)
         switch result {
         case .success(let model):
             onNext(model.result.messages)

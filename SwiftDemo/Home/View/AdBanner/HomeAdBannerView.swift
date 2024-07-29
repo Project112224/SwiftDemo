@@ -48,14 +48,16 @@ class HomeAdBannerView: UIView {
     
     init() {
         super.init(frame: CGRect.zero)
-        configureUI()
+        self.configureUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        configureUI()
+        self.configureUI()
     }
-    
+}
+
+extension HomeAdBannerView {
     private func configureUI() {
         self.contentView = self.loadNib()
         self.layoutUI()
@@ -120,9 +122,6 @@ class HomeAdBannerView: UIView {
         )
         RunLoop.main.add(nextTimer!, forMode: .common)
     }
-}
-
-extension HomeAdBannerView {
     
     private func regroupBannerList() {
         guard self.bannerList.count > 1 else {

@@ -11,7 +11,7 @@ extension String {
     
     /// 依幣別轉換顯示樣式
     /// - Returns: 顯示金額
-    func toCurrencyFormat() -> String {
+    func toCurrency() -> String {
         if let doubleValue = Double(self) {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal

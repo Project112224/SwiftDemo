@@ -26,8 +26,9 @@ class HomeHeaderView: UIView {
         super.init(coder: aDecoder)!
         configureUI()
     }
-    
-    
+}
+
+extension HomeHeaderView {
     private func configureUI() {
         self.contentView = self.loadNib()
         self.layoutUI()
@@ -55,5 +56,4 @@ class HomeHeaderView: UIView {
     func bindBellUI(isEmptyNotification: Bool = true) {
         self.notificationButton.setImage(UIImage(named: isEmptyNotification ? "home_title_icon_bell_normal" : "home_title_icon_bell_active"), for: .normal)
     }
-    
 }

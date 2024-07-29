@@ -16,7 +16,10 @@ class HomeAdBannerImageCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+}
+
+
+extension HomeAdBannerImageCollectionViewCell {
     func configureCell(model: HomeAdBannerInfoModel) {
         self.bannerImageView.loadImage(urlString: model.linkUrl)
         

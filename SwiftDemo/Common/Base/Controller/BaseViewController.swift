@@ -8,7 +8,6 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,7 +32,7 @@ extension BaseViewController {
     
     /// 顯示 alert 畫面
     /// - Parameter message: 錯誤訊息
-    func showAlert(message: String) {
+    func alert(_ message: String) {
         let alertController = UIAlertController(title: "Api Error", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
