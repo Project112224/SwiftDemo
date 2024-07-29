@@ -12,17 +12,14 @@ struct HomeCurrcyBalanceModel: Decodable {
     var balance: Decimal?
     
     var balanceString: String {
-        let isMask = UserDefaults.isMaskBalance
+        let isMask: Bool = UserDefaults.isMaskBalance
         if isMask {
             return "********"
-        }
-        else {
-            if let balance = self.balance {
-                return "\(balance)".toCurrencyFormat()
+        } else {
+            if let balance: Decimal = self.balance {
+                return "\(balance)".toCurrency()
             }
-            else {
-                return "-"
-            }
+            return "-"
         }
     }
 }

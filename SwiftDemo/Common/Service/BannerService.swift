@@ -10,7 +10,7 @@ import Foundation
 class BannerService {
     
     static func queryList(onNext: ([HomeAdBannerInfoModel])->(), onError: ((Error)->())? = nil) async {
-        let result = await NetworkManager.getMethod(endpoint: .banner, model: HomeAdBannerModel.self)
+        let result = await NetworkManager.get(endpoint: .banner, model: HomeAdBannerModel.self)
         switch result {
         case .success(let model):
             onNext(model.result.bannerList)

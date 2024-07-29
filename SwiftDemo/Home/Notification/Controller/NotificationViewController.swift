@@ -83,7 +83,7 @@ extension NotificationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.cellAutoIdentifier(NotificationInfoTableViewCell.self, indexPath: indexPath) as? NotificationInfoTableViewCell,
+        guard let cell = tableView.cellLoadWithIdentifier(NotificationInfoTableViewCell.self, indexPath: indexPath) as? NotificationInfoTableViewCell,
               let viewModel = self.viewModel else {
             return UITableViewCell()
         }

@@ -16,7 +16,7 @@ class AccountService {
                 
                 for endpoint in apiList {
                     group.addTask {
-                        let result = await NetworkManager.getMethod(endpoint: endpoint, model: HomeAccountBalanceModel.self)
+                        let result = await NetworkManager.get(endpoint: endpoint, model: HomeAccountBalanceModel.self)
                         switch result {
                         case .success(let model):
                             return model.result
