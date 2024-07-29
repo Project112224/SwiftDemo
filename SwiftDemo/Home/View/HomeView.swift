@@ -20,12 +20,14 @@ extension HomeViewController {
 
         self.scrollView.addSubview(self.baseView)
         let bottomSpace = self.view.safeAreaInsets.top + 22
+        let baseViewBottomConstraint = self.baseView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -bottomSpace)
+        baseViewBottomConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             self.baseView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
             self.baseView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 0),
             self.baseView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 0),
             self.baseView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0),
-            self.baseView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -bottomSpace)
+            baseViewBottomConstraint
         ])
         
         self.baseView.addSubview(self.headerView)
