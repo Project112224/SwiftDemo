@@ -11,33 +11,21 @@ extension HomeViewController {
     
     func layoutSetting() {
         self.view.addSubview(self.scrollView)
-        let scrollViewTopAnchor = self.scrollView.topAnchor.constraint(
-            equalTo: self.view.topAnchor, 
-            constant: self.view.safeAreaInsets.top
-        )
-        scrollViewTopAnchor.priority = .defaultLow
-        
-        let scrollViewBottomAnchor = self.scrollView.bottomAnchor.constraint(
-            equalTo: self.view.bottomAnchor,
-            // tabbar bottom + height = 72
-            constant: self.view.safeAreaInsets.bottom - 72
-        )
-        scrollViewBottomAnchor.priority = .defaultHigh
-        
         NSLayoutConstraint.activate([
-            scrollViewTopAnchor,
+            self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
             self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
             self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
-            scrollViewBottomAnchor
+            self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
         ])
         
         self.scrollView.addSubview(self.baseView)
+        let bottomSpace = self.view.safeAreaInsets.top + 22
         NSLayoutConstraint.activate([
             self.baseView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
             self.baseView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 0),
             self.baseView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 0),
             self.baseView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0),
-            self.baseView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: 0)
+            self.baseView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -bottomSpace)
         ])
         
         self.baseView.addSubview(self.headerView)

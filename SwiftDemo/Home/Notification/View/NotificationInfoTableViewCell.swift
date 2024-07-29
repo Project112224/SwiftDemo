@@ -29,7 +29,6 @@ class NotificationInfoTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - Public Method
 extension NotificationInfoTableViewCell {
     func configureCell(model: NotificationMessageModel) {
         self.circleView.isHidden = !model.status

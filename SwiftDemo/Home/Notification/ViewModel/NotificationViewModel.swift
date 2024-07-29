@@ -37,7 +37,6 @@ class NotificationViewModel {
 }
 
 extension NotificationViewModel {
-    
     private func fetchNotificationList(onNext: ([NotificationMessageModel])->()) async {
         await NotificationService.queryList { list in
             onNext(list ?? [])
