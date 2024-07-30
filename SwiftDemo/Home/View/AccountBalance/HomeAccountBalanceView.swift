@@ -77,12 +77,12 @@ extension HomeAccountBalanceView {
     
     func bindBalance(_ model: HomeAccountBindModel?) {
         if (model == nil) && self.isLoading {
-            self.showLabelLoading()
+            self.showLabelSkeleton()
             return
         }
         self.model = model
         self.bindLabelInfo()
-        self.hideLabelLoading()
+        self.hideLabelSkeleton()
     }
     
     private func bindLabelInfo() {
@@ -90,13 +90,13 @@ extension HomeAccountBalanceView {
         self.khrBalanceLabel.text = model?.khr.balanceString
     }
     
-    private func showLabelLoading() {
-        self.usdBalanceLabel.showSkeletonAnimation(color: (.color240, .color251), size: CGSize(width: 240, height: self.usdBalanceLabel.bounds.height))
-        self.khrBalanceLabel.showSkeletonAnimation(color: (.color240, .color251))
+    private func showLabelSkeleton() {
+        self.usdBalanceLabel.showSkeleton(color: (.color240, .color251), size: CGSize(width: 240, height: self.usdBalanceLabel.bounds.height))
+        self.khrBalanceLabel.showSkeleton(color: (.color240, .color251))
     }
     
-    private func hideLabelLoading() {
-        self.usdBalanceLabel.hideSkeletonAnimation()
-        self.khrBalanceLabel.hideSkeletonAnimation()
+    private func hideLabelSkeleton() {
+        self.usdBalanceLabel.hideSkeleton()
+        self.khrBalanceLabel.hideSkeleton()
     }
 }

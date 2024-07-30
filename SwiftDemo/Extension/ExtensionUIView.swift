@@ -24,21 +24,20 @@ extension UIView {
     /// - Parameters:
     ///   - color: (light: 亮色, dark: 暗色)
     ///   - size: 指定 Skeleton 大小，nil 為元件大小
-    func showSkeletonAnimation(color: (light: UIColor, dark: UIColor), size: CGSize? = nil) {
-        self.hideSkeletonAnimation()
+    func showSkeleton(color: (light: UIColor, dark: UIColor), size: CGSize? = nil) {
+        self.hideSkeleton()
 
-        // 元件為 label 時值先不顯示
         if let label = self as? UILabel {
             label.text = nil
         }
         
-        // Skeleton 相關設定
+        // set skeleton
         let skeletonSize = size == nil ? self.bounds.size : size!
         let skeletonView = UIView()
         skeletonView.backgroundColor = color.dark.withAlphaComponent(0.1)
         skeletonView.frame = CGRect(x: 0, y: 0, width: skeletonSize.width, height: skeletonSize.height)
         
-        // 漸層相關設定
+        // set gradient
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: skeletonSize.width, height: skeletonSize.height)
         gradientLayer.colors = [color.light.cgColor, color.dark.cgColor, color.dark.cgColor, color.light.cgColor]
@@ -46,7 +45,7 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         gradientLayer.name = String(describing: CAGradientLayer.self)
         
-        // 動畫相關設定
+        // set animation
         let width = skeletonSize.width
         let animation = CABasicAnimation(keyPath: "transform.translation.x")
         animation.duration = 2
@@ -64,13 +63,12 @@ extension UIView {
     }
 
     /// 刪除 Skeleton 動畫
-    func hideSkeletonAnimation() {
+    func hideSkeleton() {
         for view in self.subviews {
-            // 找 subviews 是否存在做動畫的 Layer
-            guard let isExist = view.layer.sublayers?.contains (where: { $0.name == String(describing: CAGradientLayer.self) }), isExist else {
+            guard let isExist = view.layer.sublayers?.contains (where: { $0.name == String(describing: CAGradientLayer.self) }), 
+                  isExist else {
                 continue
             }
-            // 存在的話把 view 移除，並結束迴圈
             view.removeFromSuperview()
             break
         }
