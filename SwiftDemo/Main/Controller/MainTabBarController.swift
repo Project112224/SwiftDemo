@@ -83,7 +83,6 @@ extension MainTabBarController {
         let tabBarItemCount = CGFloat(self.tabBar.items?.count ?? 0)
         let availableSpace = self.tabBarInfo.width - (tabBarItemCount * self.tabBarInfo.itemWidth)
         let itemSpacing = tabBarItemCount == 0 ? 0 : availableSpace / tabBarItemCount
-        
         let itemPositioning: UITabBar.ItemPositioning = .centered
         
         if #available(iOS 13.0, *) {

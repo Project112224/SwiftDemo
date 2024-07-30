@@ -16,11 +16,11 @@ class HomeViewController: BaseViewController {
     }()
     
     lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.refreshControl = UIRefreshControl()
-        scrollView.refreshControl?.addTarget(self, action: #selector(self.handleRefreshControlAction), for: .valueChanged)
-        return scrollView
+        let view = UIScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.refreshControl = UIRefreshControl()
+        view.refreshControl?.addTarget(self, action: #selector(self.handleRefreshControlAction), for: .valueChanged)
+        return view
     }()
     
     lazy var headerView: HomeHeaderView = {
@@ -76,7 +76,6 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         self.settingViewModel()
     }
-    
     
     override func configureUI() {
         super.configureUI()
@@ -165,7 +164,7 @@ extension HomeViewController {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("test: \(indexPath.row)")
+        print("test: \(FunctionType.allCases[indexPath.row].rawValue)")
     }
 }
 

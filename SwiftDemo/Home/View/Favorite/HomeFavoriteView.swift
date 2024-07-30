@@ -71,6 +71,10 @@ extension HomeFavoriteView {
 
 // MARK: - UICollectionViewDataSource
 extension HomeFavoriteView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select: \(self.favoriteList[indexPath.row].nickname)")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.favoriteList.count
     }
