@@ -53,6 +53,9 @@
 		A7F662F029E708FA00AAC753 /* TransType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F662EF29E708FA00AAC753 /* TransType.swift */; };
 		A7F662F329E798AC00AAC753 /* HomeFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F662F129E798AC00AAC753 /* HomeFavoriteCollectionViewCell.swift */; };
 		A7F662F429E798AC00AAC753 /* HomeFavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7F662F229E798AC00AAC753 /* HomeFavoriteCollectionViewCell.xib */; };
+		F943490D2CE1ECEE0027459E /* AccountViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F943490C2CE1ECEE0027459E /* AccountViewUI.swift */; };
+		F943490F2CE1F5170027459E /* StateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F943490E2CE1F5170027459E /* StateObject.swift */; };
+		F94349112CE1F5700027459E /* PublishedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94349102CE1F5700027459E /* PublishedObject.swift */; };
 		F9CD09782C422553007EBD4A /* MainTabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CD09772C422553007EBD4A /* MainTabBarItemType.swift */; };
 		F9CD097A2C422BBB007EBD4A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CD09792C422BBB007EBD4A /* HomeView.swift */; };
 		F9CD09802C423EEE007EBD4A /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9CD097F2C423EEE007EBD4A /* HomeHeaderView.xib */; };
@@ -113,6 +116,9 @@
 		A7F662EF29E708FA00AAC753 /* TransType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransType.swift; sourceTree = "<group>"; };
 		A7F662F129E798AC00AAC753 /* HomeFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7F662F229E798AC00AAC753 /* HomeFavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		F943490C2CE1ECEE0027459E /* AccountViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewUI.swift; sourceTree = "<group>"; };
+		F943490E2CE1F5170027459E /* StateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObject.swift; sourceTree = "<group>"; };
+		F94349102CE1F5700027459E /* PublishedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedObject.swift; sourceTree = "<group>"; };
 		F9CD09772C422553007EBD4A /* MainTabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarItemType.swift; sourceTree = "<group>"; };
 		F9CD09792C422BBB007EBD4A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F9CD097F2C423EEE007EBD4A /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				A767571C29E5066B007C88CD /* AccountViewController.swift */,
+				F943490C2CE1ECEE0027459E /* AccountViewUI.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +283,8 @@
 				A70F055E29E9A6AB006BD99C /* ExtensionUIImageView.swift */,
 				A74C0D6829EA991E00FDC60F /* ExtensionString.swift */,
 				A7A538362C3E8CC90081A2F6 /* ExtensionUIView.swift */,
+				F943490E2CE1F5170027459E /* StateObject.swift */,
+				F94349102CE1F5700027459E /* PublishedObject.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -562,6 +571,7 @@
 				A7F662D829E6695600AAC753 /* CurrencyType.swift in Sources */,
 				A767575529E5773E007C88CD /* NotificationListModel.swift in Sources */,
 				A767573E29E537EF007C88CD /* BaseResponseModel.swift in Sources */,
+				F943490D2CE1ECEE0027459E /* AccountViewUI.swift in Sources */,
 				A76756F629E4EC55007C88CD /* AppDelegate.swift in Sources */,
 				A7F662D529E6673700AAC753 /* HomeAccountBalanceModel.swift in Sources */,
 				A76756F829E4EC55007C88CD /* SceneDelegate.swift in Sources */,
@@ -579,8 +589,10 @@
 				A767572929E506F9007C88CD /* ServiceViewController.swift in Sources */,
 				A7A538372C3E8CC90081A2F6 /* ExtensionUIView.swift in Sources */,
 				F9CD098B2C47B93C007EBD4A /* AccountService.swift in Sources */,
+				F94349112CE1F5700027459E /* PublishedObject.swift in Sources */,
 				A7F662E729E6C28800AAC753 /* FunctionType.swift in Sources */,
 				A7F662E929E6F95D00AAC753 /* HomeFavoriteModel.swift in Sources */,
+				F943490F2CE1F5170027459E /* StateObject.swift in Sources */,
 				A7F662DC29E6B11300AAC753 /* ExtensionUserDefaults.swift in Sources */,
 				A70F056129E9A792006BD99C /* HomeAdBannerModel.swift in Sources */,
 				A767570C29E4EE13007C88CD /* HomeViewController.swift in Sources */,
