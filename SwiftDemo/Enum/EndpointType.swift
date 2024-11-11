@@ -31,7 +31,6 @@ enum Endpoint: String {
     case banner = "6699f7dfad19ca34f889ae09"
     
     var urlString: String {
-//        return "https://willywu0201.github.io/data/\(self.rawValue).json"
         return "https://api.jsonbin.io/v3/b/\(self.rawValue)/latest"
     }
 }
